@@ -20,16 +20,7 @@ engine = create_engine(f'mysql+pymysql://{rds_connection_string}')
 
 leads_df = pd.read_sql('SELECT * FROM leadscsv', con=engine)
 print(leads_df.head())
-# app.config["SQLALCHEMY_DATABASE_URI"] = ""
-# db = SQLAlchemy(app)
 
-# # reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(db.engine, reflect=True)
-
-# # Save references to each table
-# TENNISDATA = Base.classes.TENNISDATA
 
 @app.route("/")
 def index():
@@ -38,17 +29,16 @@ def index():
 
 @app.route("/data")
 def get_data():
-    """Return a list of sample names."""
+
+    leads_df = pd.read_sql('SELECT * FROM leadscsv', con=engine)
+
 
     # Use Pandas to perform the sql query
-    stmt = db.session.query(leads_df).statement
-    df = pd.read_sql_query(stmt, db.session.bind)
+    # stmt = db.session.query(leads_df).statement
+    # df = pd.read_sql_query(stmt, db.session.bind)
 
     # Return a list of the column names (sample names)
-    return jsonify(list(df.columns)[2:])    
-
-
-
+    return jsonify(list(leads_df)    
 
 if __name__ == "__main__":
     app.run()    
