@@ -34,7 +34,7 @@ def index():
 def test_func():
     stmt = db.session.query(Leads_table).statement
     df = pd.read_sql_query(stmt, db.session.bind)
-    return jsonify(list(df["Zip"]))
+    return jsonify(list(df))
 
 
 if __name__ == "__main__":
