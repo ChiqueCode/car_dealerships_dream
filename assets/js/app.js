@@ -1,4 +1,4 @@
-function buildMetadata(sample) {
+function build(sample) {
     var url = "/names";
   
     //Use `d3.json` to fetch the metadata for a sample

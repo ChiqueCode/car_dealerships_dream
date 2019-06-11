@@ -1,4 +1,4 @@
-# Importing Dependancies 
+# Dependancies
 import os
 import pandas as pd
 import numpy as np
@@ -11,34 +11,31 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-#################################################
 # Database Setup
-#################################################
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/leads.sqlite"
+db = SQLAlchemy(app)
 
-rds_connection_string = f"root:121212nJ@127.0.0.1/leads_db"
-engine = create_engine(f'mysql+pymysql://{rds_connection_string}')
+# Reflect an existing database into a new model
+Base = automap_base()
+# reflect the tables
+Base.prepare(db.engine, reflect=True)
 
-leads_df = pd.read_sql('SELECT * FROM leadscsv', con=engine)
-print(leads_df.head())
+# Save references to each table
+Leads_table = Base.classes.leads_table
 
-
+# Home route 
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
 
-@app.route("/data")
-def get_data():
+# Route for testing the data 
+@app.route("/test")
+def test_func():
+    stmt = db.session.query(Leads_table).statement
+    df = pd.read_sql_query(stmt, db.session.bind)
+    return jsonify(list(df["Zip"]))
 
-    leads_df = pd.read_sql('SELECT * FROM leadscsv', con=engine)
-
-
-    # Use Pandas to perform the sql query
-    # stmt = db.session.query(leads_df).statement
-    # df = pd.read_sql_query(stmt, db.session.bind)
-
-    # Return a list of the column names (sample names)
-    return jsonify(list(leads_df)    
 
 if __name__ == "__main__":
     app.run()    
