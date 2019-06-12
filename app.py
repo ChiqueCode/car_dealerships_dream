@@ -30,11 +30,11 @@ def index():
     return render_template("index.html")
 
 # Route for testing the data 
-# @app.route("/test")
-# def test_func():
-#     stmt = db.session.query(Leads_table).statement
-#     df = pd.read_sql_query(stmt, db.session.bind)
-#     return jsonify(list(df["Zip"]))
+@app.route("/test")
+def test_func():
+    stmt = db.session.query(Leads_table).statement
+    df = pd.read_sql_query(stmt, db.session.bind)
+    return jsonify(list(df))
 
 
 # Data route
@@ -43,12 +43,15 @@ def get_data():
 
     # All the columns for selection
     sel = [
+        Leads_table.ConsumerID,
         Leads_table.Zip,
+        Leads_table.Audience_Count,
         Leads_table.City,
         Leads_table.State,
         Leads_table.Gender,
         Leads_table.Age,
         Leads_table.MaritalStatus,
+        Leads_table.EthnicGroup,
         Leads_table.CreditScore,
         Leads_table.Kids,
         Leads_table.Email_Address
@@ -58,7 +61,7 @@ def get_data():
     results = db.session.query(*sel).all()
 
     # Creating Pandas dataframe
-    df = pd.DataFrame(results, columns=["Zip", "City", "State", "Gender", "Age", "MaritalStatus", "CreditScore", "Kids", "Email_Address"])
+    df = pd.DataFrame(results, columns=["ConsumerID", "Zip", "Audience_Count", "City", "State", "Gender", "Age", "MaritalStatus", "EthnicGroup", "CreditScore", "Kids", "Email_Address"])
 
     # Return results in JSON format for the interwebz
     return jsonify(df.to_dict(orient="records"))
