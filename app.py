@@ -58,7 +58,9 @@ def get_data():
     ]
 
     # Saving all the data from quering above columns
-    results = db.session.query(*sel).all()
+    # results = db.session.query(*sel).\limit(10).all()
+    results = db.session.query(*sel).\
+        limit(500).all()
 
     # Creating Pandas dataframe
     df = pd.DataFrame(results, columns=["ConsumerID", "Zip", "Audience_Count", "City", "State", "Gender", "Age", "MaritalStatus", "EthnicGroup", "CreditScore", "Kids", "Email_Address"])
