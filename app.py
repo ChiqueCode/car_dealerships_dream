@@ -9,6 +9,11 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+
+
+from sqlalchemy.sql import func
+
+
 app = Flask(__name__)
 
 # Database Setup
@@ -28,6 +33,19 @@ Leads_table = Base.classes.leads_table
 def index():
     """Return the homepage."""
     return render_template("index.html")
+    app.add_url_rule('/', 'index', index)
+
+@app.route("/Charts")
+def index1():
+    """Return the homepage."""
+    return render_template("Chart.html") 
+    app.add_url_rule('/', 'index1', index1)     
+
+@app.route("/Map")
+def index2():
+    """Return the homepage."""
+    return render_template("Map.html") 
+    app.add_url_rule('/', 'index2', index2)  
 
 # Route for testing the data 
 @app.route("/test")
@@ -98,6 +116,63 @@ def get_data_by_state():
 
     # Return results in JSON format for the interwebz
     return jsonify(df_by_state.to_dict(orient="records"))
+
+@app.route("/Charts/AgeBin")
+def AgeBin_data():
+    """Return Age Bin and Audience Count"""
+
+    # Query for Audience Count by Age Bin
+    sel = [Leads_table.AGEBIN,func.count(Leads_table.ConsumerID)]
+    results = db.session.query(*sel).\
+        group_by(Leads_table.AGEBIN).all()
+    df = pd.DataFrame(results, columns=['AgeBin', 'AudienceCount'])
+    return jsonify(df.to_dict(orient="records"))
+
+@app.route("/Charts/Gender")
+def Gender_data():
+    """Return Gender and Audience Count"""
+
+    # Query for Audience Count by Age Bin
+    sel = [Leads_table.Gender,func.count(Leads_table.ConsumerID)]
+    results = db.session.query(*sel).\
+        group_by(Leads_table.Gender).all()
+    df1 = pd.DataFrame(results, columns=['Gender', 'AudienceCount'])
+    return jsonify(df1.to_dict(orient="records"))
+
+@app.route("/Charts/CreditScore")
+def CreditScore_data():
+    """Return Credit Score and Audience Count"""
+   # Query for Audience Count by Credit Score
+    sel = [Leads_table.CreditScore,func.count(Leads_table.ConsumerID)]
+    results = db.session.query(*sel).\
+        group_by(Leads_table.CreditScore).all()
+    df2 = pd.DataFrame(results, columns=['CreditScore', 'AudienceCount'])
+    # Format the data for Plotly
+    data = {
+        "x": df2["CreditScore"].values.tolist(),
+        "y": df2["AudienceCount"].values.tolist(),
+        "type": "bar"
+    }
+    return jsonify(data)
+           
+
+@app.route("/Charts/Household_Income")
+def Household_Income_data():
+    """Return Household_Income and Audience Count"""
+    # Query for Audience Count by Credit Score
+    sel = [Leads_table.Household_Income,func.count(Leads_table.ConsumerID)]
+    results = db.session.query(*sel).\
+        group_by(Leads_table.Household_Income).all()
+    df3 = pd.DataFrame(results, columns=['Household_Income', 'AudienceCount'])
+    # Format the data for Plotly
+    data = {
+        "x": df3["Household_Income"].values.tolist(),
+        "y": df3["AudienceCount"].values.tolist(),
+        "type": "bar"
+    }
+    return jsonify(data)
+
+
 
 
 if __name__ == "__main__":
