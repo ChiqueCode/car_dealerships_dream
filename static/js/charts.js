@@ -1,6 +1,5 @@
 // All the charts for the app
 
-
 // Plotly API https://plot.ly/javascript/reference/
 const scatterLineColor = "#5A8C7A";
 const scatterHoverBgColor = "#393E40";

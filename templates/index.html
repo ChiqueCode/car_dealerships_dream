@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dealership Leads | Home</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:900|Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
     <!-- Foundation docs @ https://foundation.zurb.com/sites/docs/ -->
     <link
       rel="stylesheet"
@@ -42,11 +45,11 @@
     </div>
     <!-- End Site navigation -->
 
-    <div class="grid-x grid-padding-x grid-padding-y align-middle">
-      <div class="cell large-5 text-center">
+    <div class="grid-x grid-padding-x grid-padding-y align-middle" id="banner">
+      <div class="cell medium-5 large-offset-1 large-5 text-center">
         <img src="static/images/sitebanner-02.png" alt="Site Banner" />
       </div>
-      <div class="cell large-5">
+      <div class="cell medium-7 large-5">
         <h1>Find your next customer</h1>
         <p>
           Digital marketing offers what seems like endless new ways to
@@ -113,42 +116,71 @@
           </p>
         </section>
         <section class="cell large-12">
-            <form action="/client-area">
-                <div class="form-group">
-                  <label for="dealership">Name of Dealership</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="dealership"
-                    aria-describedby="dealership"
-                    placeholder="Mercedes-Benz of Edison Service - A Ray Catena Dealership"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="address">Address</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="address"
-                    aria-describedby="address"
-                    placeholder="123 Main St, Edison, NJ 08817"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone Number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="phone"
-                    aria-describedby="phone"
-                    placeholder="(732) 549-6606"
-                  />
-                </div>
-                <button type="submit" class="button large expanded" id="buy-button">Pay with PayPal</button>
-              </form>
+          <form action="/client-area">
+            <div class="form-group">
+              <label for="dealership">Name of Dealership</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dealership"
+                aria-describedby="dealership"
+                placeholder="Mercedes-Benz of Edison Service - A Ray Catena Dealership"
+              />
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                aria-describedby="address"
+                placeholder="123 Main St, Edison, NJ 08817"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                aria-describedby="phone"
+                placeholder="(732) 549-6606"
+              />
+            </div>
+            <button type="submit" class="button large expanded" id="buy-button">
+              Pay with PayPal
+            </button>
+          </form>
         </section>
       </div>
     </div>
+
+    <footer class="grid-x grid-padding-x grid-padding-y align-middle">
+      <div class="cell medium-7 large-5 text-center">
+        <h3>Site Created with ❤️ by:</h3>
+        <ul>
+          <li><a href="https://chique.dev/">Kseniya Bogoslavskaya</a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </div>
+      <div class="cell medium-5 large-5">
+        <h3>Find your next customer</h3>
+        <p>
+          Digital marketing offers what seems like endless new ways to
+          advertise. But let’s face it, figuring out the right targeting
+          strategy can be really hard. We help you rise above advertising
+          complexity and can connect you to your true buying audience — because
+          we already know your next customer.
+        </p>
+        <p>
+          <small>
+            <a href="#">Back to top</a>
+          </small>
+        </p>
+      </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script

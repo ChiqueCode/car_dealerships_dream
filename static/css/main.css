@@ -1,24 +1,60 @@
 /* Foundation Docs @ https://foundation.zurb.com/sites/docs/ */
 
 /* Color Theme Swatches in Hex */
-dealership-loads-1 { color: #393E40; }
-dealership-loads-2 { color: #687273; }
-dealership-loads-3 { color: #5A8C7A; }
-dealership-loads-4 { color: #F2F2F2; }
-dealership-loads-5 { color: #0D0D0D; }
+dealership-loads-1 {
+  color: #393e40;
+}
+dealership-loads-2 {
+  color: #687273;
+}
+dealership-loads-3 {
+  color: #5a8c7a;
+}
+dealership-loads-4 {
+  color: #f2f2f2;
+}
+dealership-loads-5 {
+  color: #0d0d0d;
+}
 
 body {
-  color: #0D0D0D;
+  color: #0d0d0d;
   background-color: white;
   font-family: "Noto Sans SC", sans-serif;
 }
 
-.top-bar, .top-bar ul {
-  background-color: #F2F2F2;
+/* Navigation */
+.top-bar {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.top-bar .menu-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+.top-bar,
+.top-bar ul {
+  background-color: #393e40;
+  color: #f2f2f2;
+}
+
+.top-bar ul a {
+  color: #f2f2f2;
+}
+.top-bar ul a:hover,
+.top-bar ul a:focus {
+  color: #5a8c7a;
 }
 
 h1 {
   line-height: 1;
+}
+
+#banner {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 /* For all headings */
@@ -29,6 +65,17 @@ h4,
 h5,
 h6 {
   font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+.button {
+  background-color: #5a8c7a;
+  color: #f2f2f2;
+}
+.button:hover,
+.button:focus {
+  background-color: #393e40;
+  color: #f2f2f2;
 }
 
 /* Overriding plotly's default fonts */
@@ -54,6 +101,25 @@ text,
 #map {
   min-height: 500px;
   width: 100%;
+}
+
+footer {
+  background-color: #0d0d0d;
+  color: #687273;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer a {
+  color: #5a8c7a;
+}
+footer a:hover,
+footer a:focus {
+  color: #f2f2f2;
 }
 
 /* Responsive Breakpoints aka Media Queries */
