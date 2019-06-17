@@ -1,35 +1,42 @@
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), center center no-repeat url(../../static/images/miwhip-1473251-unsplash.jpg);
-    background-size: cover;
+/* Foundation Docs @ https://foundation.zurb.com/sites/docs/ */
+
+body { 
+  background-color: white;
 }
 
-.hero h1 {
-    color: white;
+h1 {
+  line-height: 1;
 }
 
-.hero h2 {
-    color: #eee;
+
+#ageChart,
+#genderChart {
+  min-height: 400px;
 }
 
-.box {
-    height: 400px;
-    padding: 20px;
-    color: #fff;
-    background: deepskyblue;
-  }
+/* Responsive band-aid for charts - requires page reload on resize */
+.svg-container {
+  margin: 0 auto;
+}
 
-  body {
-    padding: 0;
-    margin: 0;
-  }
-  
-  #map,
-  body,
-  html {
-    height: 100%;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
+#map {
+  min-height: 500px;
+  width: 100%;
+}
+
+/* Responsive Breakpoints aka Media Queries */
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}

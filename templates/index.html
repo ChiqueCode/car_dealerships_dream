@@ -7,183 +7,164 @@
     <!-- Foundation docs @ https://foundation.zurb.com/sites/docs/ -->
     <link
       rel="stylesheet"
-      href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"
+      integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg=="
+      crossorigin="anonymous"
     />
+    <!-- Leaflet CSS & JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+      crossorigin=""
+    />
+    <!-- Our custom CSS -->
     <link rel="stylesheet" href="static/css/main.css" />
   </head>
 
   <body>
+    <!-- Start Site navigation -->
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text"><a href="#">Home</a></li>
-          <li><a href="/charts">Insights</a></li>
-          <li><a href="/map">Spread</a></li>
+          <li class="menu-text">Dealership Leads</li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
       </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="/client-area">Client Area</a></li>
+        </ul>
+      </div>
     </div>
+    <!-- End Site navigation -->
 
-    <div class="callout large primary hero">
-      <div class="row column text-center">
-        <h1>Dealership Leads</h1>
-        <h2 class="subheader">The good ones</h2>
+    <div class="grid-x grid-padding-x grid-padding-y align-middle">
+      <div class="cell large-5 text-center">
+        <img src="static/images/sitebanner-02.png" alt="Site Banner" />
+      </div>
+      <div class="cell large-5">
+        <h1>Find your next customer</h1>
+        <p>
+          Digital marketing offers what seems like endless new ways to
+          advertise. But let’s face it, figuring out the right targeting
+          strategy can be really hard. We help you rise above advertising
+          complexity and can connect you to your true buying audience — because
+          we already know your next customer.
+        </p>
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
-
-        <section>
-          <h3>Find your next customer</h3>
-          <img
-            class="thumbnail"
-            src="https://www.thebridgecorp.com/wp-content/uploads/CS__ParkPlace-1.png"
-          />
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <section class="cell large-12">
+          <h2 id="insights">Insights</h2>
           <p>
-            Digital marketing offers what seems like endless new ways to
-            advertise. But let’s face it, figuring out the right targeting
-            strategy can be really hard. We help you rise above advertising
-            complexity and can connect you to your true buying audience — because
-            we already know your next customer. luctus.
+            Come with questions. Leave with answers. Here are some data points
+            for you to see what we have before you buy. Below is a series of
+            charts and maps.
           </p>
         </section>
-        <section>
-          <h3 id="insights">Insights</h3>
-          <img class="thumbnail" src="http://placekitten.com/850/350" />
-          <p>
-            Praesent id metus massa, ut blandit odio. Proin quis tortor orci.
-            Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a
-            porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci.
-            Quisque eget odio ac lectus vestibulum faucibus eget in metus. In
-            pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.
-          </p>
+        <section class="cell large-6">
+          <!-- D3 Age Chart -->
+          <div id="ageChart"></div>
+        </section>
+        <section class="cell large-6">
+          <!-- D3 Gender Chart -->
+          <div id="genderChart"></div>
+        </section>
+        <section class="cell large-6">
+          <!-- D3 Credit Score Chart -->
+          <div id="creditScoreChart"></div>
+        </section>
+        <section class="cell large-6">
+          <!-- D3 Household Income Chart -->
+          <div id="householdIncomeChart"></div>
         </section>
       </div>
     </div>
-    <div class="row">
-      <section class="large-12 columns">
-        <h3 id="purchase">Purchase</h3>
-        <img class="thumbnail" src="http://placekitten.com/850/350" />
-        <p>
-          After the client has purchased the leads we'll provide them with this
-          table.
-        </p>
-      </section>
-    </div>
-    <div class="row">
-      <div class="large-2 columns">
-        <form>
-          <div class="form-group">
-            <label for="zip">Zip Code</label>
-            <input
-              type="number"
-              class="form-control"
-              id="zip"
-              aria-describedby="zipcode"
-              placeholder="7205"
-            />
-          </div>
-          <div class="form-group">
-            <label for="gender">Gender</label>
-            <input
-              type="text"
-              class="form-control"
-              id="gender"
-              aria-describedby="gender"
-              placeholder="Male"
-            />
-          </div>
-          <div class="form-group">
-            <label for="age">Age</label>
-            <input
-              type="number"
-              class="form-control"
-              id="age"
-              aria-describedby="age"
-              placeholder="20"
-            />
-          </div>
-          <div class="form-group">
-            <label for="status">Marital Status</label>
-            <input
-              type="text"
-              class="form-control"
-              id="status"
-              aria-describedby="status"
-              placeholder="Single"
-            />
-          </div>
-          <div class="form-group">
-            <label for="group">Ethnic Group</label>
-            <input
-              type="text"
-              class="form-control"
-              id="group"
-              aria-describedby="group"
-              placeholder="Hispanic"
-            />
-          </div>
-          <div class="form-group">
-            <label for="kids">Kids</label>
-            <input
-              type="text"
-              class="form-control"
-              id="kids"
-              aria-describedby="kids"
-              placeholder="2 Kids"
-            />
-          </div>
-          <button type="submit" class="button">Filter</button>
-        </form>
-      </div>
-      <div class="large-10 columns">
-        <table class="client-table">
-          <thead>
-            <tr>
-              <td>Age</td>
-              <td>Audience Count</td>
-              <td>City</td>
-              <td>Consumer ID</td>
-              <td>Credit Score</td>
-              <td>Email Address</td>
-              <td>Ethnic Group</td>
-              <td>Gender</td>
-              <td>Kids</td>
-              <td>Marital Status</td>
-              <td>State</td>
-              <td>Zip</td>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <section class="cell large-12">
+          <h2 id="audience">Audience Spread</h2>
+          <p>
+            Come with questions. Leave with answers. Here are some data points
+            for you to see what we have before you buy. Below is a series of
+            charts and maps.
+          </p>
+        </section>
+        <section class="cell large-12">
+          <!-- Leaflet Map -->
+          <div id="map"></div>
+        </section>
       </div>
     </div>
-    <div class="row">
-      <section class="large-12 columns">
-        <h3 id="contact">Contact</h3>
-        <img class="thumbnail" src="http://placekitten.com/850/350" />
-        <p>
-          Praesent id metus massa, ut blandit odio. Proin quis tortor orci.
-          Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a
-          porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci.
-          Quisque eget odio ac lectus vestibulum faucibus eget in metus. In
-          pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.
-        </p>
-        <div class="callout">
-          <ul class="menu simple">
-            <li>
-              Authors: <a href="https://chique.dev/">Kseniya Bogoslavskaya</a>,
-            </li>
-          </ul>
-        </div>
-        <p><a href="#">Back to top</a></p>
-      </section>
+
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <section class="cell large-12">
+          <h2 id="calltoaction">Buy Now</h2>
+          <p>
+            Fill our the form below to purchase the leads for your dealership.
+          </p>
+        </section>
+        <section class="cell large-12">
+            <form>
+                <div class="form-group">
+                  <label for="dealership">Name of Dealership</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="dealership"
+                    aria-describedby="dealership"
+                    placeholder="Mercedes-Benz of Edison Service - A Ray Catena Dealership"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    aria-describedby="address"
+                    placeholder="123 Main St, Edison, NJ 08817"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    aria-describedby="phone"
+                    placeholder="(732) 549-6606"
+                  />
+                </div>
+                <button type="submit" class="button large expanded">Pay with PayPal</button>
+              </form>
+        </section>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
+      integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+      integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+      crossorigin=""
+    ></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
     <script>
       $(document).foundation();
     </script>

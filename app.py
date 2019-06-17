@@ -24,24 +24,32 @@ Base.prepare(db.engine, reflect=True)
 # Creating an easier reference
 Leads_table = Base.classes.leads_table
 
-# Home route
+# Routes 
+
+# Home page
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
     app.add_url_rule('/', 'index', index)
 
-
+# Charts only page
 @app.route("/charts")
 def index1():
-    return render_template("Chart.html")
+    return render_template("chart.html")
     app.add_url_rule('/', 'index1', index1)
 
-
+# Map only page
 @app.route("/map")
 def index2():
-    return render_template("Map.html")
+    return render_template("map.html")
     app.add_url_rule('/', 'index2', index2)
+
+# Client Area with purchased leads available
+@app.route("/client-area")
+def clientArea():
+    return render_template("client-area.html")
+    app.add_url_rule('/', 'clientArea', clientArea)
 
 # Route for testing the data
 @app.route("/test")
@@ -85,7 +93,7 @@ def get_data():
     # Return results in JSON format for the interwebz
     return jsonify(df.to_dict(orient="records"))
 
-
+# Client data route
 @app.route("/data/nj")
 def get_data_by_state():
 

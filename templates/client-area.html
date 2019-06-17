@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dealership Leads | Client Area</title>
+    <!-- Foundation docs @ https://foundation.zurb.com/sites/docs/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"
+      integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/main.css" />
+  </head>
+
+  <body>
+    <!-- Start Site navigation -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Dealership Leads</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="/client-area">Client Area</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Site navigation -->
+
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell large-12">
+          <h2>Thank you for your order!</h2>
+          <p>
+            Mercedes-Benz of Edison Service - A Ray Catena Dealership, below are
+            your leads. You may always come back to revisit the client area to
+            see your leads again.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell large-2">
+          <form>
+            <div class="form-group">
+              <label for="zip">Zip Code</label>
+              <input
+                type="number"
+                class="form-control"
+                id="zip"
+                aria-describedby="zipcode"
+                placeholder="7205"
+              />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <input
+                type="text"
+                class="form-control"
+                id="gender"
+                aria-describedby="gender"
+                placeholder="Male"
+              />
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input
+                type="number"
+                class="form-control"
+                id="age"
+                aria-describedby="age"
+                placeholder="20"
+              />
+            </div>
+            <div class="form-group">
+              <label for="status">Marital Status</label>
+              <input
+                type="text"
+                class="form-control"
+                id="status"
+                aria-describedby="status"
+                placeholder="Single"
+              />
+            </div>
+            <div class="form-group">
+              <label for="group">Ethnic Group</label>
+              <input
+                type="text"
+                class="form-control"
+                id="group"
+                aria-describedby="group"
+                placeholder="Hispanic"
+              />
+            </div>
+            <div class="form-group">
+              <label for="kids">Kids</label>
+              <input
+                type="text"
+                class="form-control"
+                id="kids"
+                aria-describedby="kids"
+                placeholder="2 Kids"
+              />
+            </div>
+            <button type="submit" class="button">Filter</button>
+          </form>
+        </div>
+        <div class=" cell large-10">
+          <table class="client-table">
+            <thead>
+              <tr>
+                <td>Age</td>
+                <td>Audience Count</td>
+                <td>City</td>
+                <td>Consumer ID</td>
+                <td>Credit Score</td>
+                <td>Email Address</td>
+                <td>Ethnic Group</td>
+                <td>Gender</td>
+                <td>Kids</td>
+                <td>Marital Status</td>
+                <td>State</td>
+                <td>Zip</td>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <section class="large-12 cell">
+          <div class="callout">
+            <ul class="menu simple">
+              <li>
+                Authors:
+                <a href="https://chique.dev/">Kseniya Bogoslavskaya</a>,
+              </li>
+            </ul>
+          </div>
+          <p><a href="#">Back to top</a></p>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"
+      integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
