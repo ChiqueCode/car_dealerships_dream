@@ -1,5 +1,15 @@
 // All the charts for the app
 
+
+// Plotly API https://plot.ly/javascript/reference/
+const scatterLineColor = "#5A8C7A";
+const scatterHoverBgColor = "#393E40";
+const scatterFontColor = "#F2F2F2";
+const scatterFontFamily = '"Noto Sans SC", sans-serif';
+const scatterMarkerType = "circle-open";
+const scatterLineMarkerWidth = 4;
+const scatterMarkerSize = 20;
+
 // Age
 function ageChart() {
   ageURL = "/charts/age";
@@ -10,7 +20,26 @@ function ageChart() {
       x: response.map(data => data.AgeBin),
       y: response.map(data => data.AudienceCount),
       line: {
-        color: "#17BECF"
+        color: scatterLineColor,
+        width: scatterLineMarkerWidth
+      },
+      marker: {
+        symbol: scatterMarkerType,
+        size: scatterMarkerSize,
+        line: {
+          width: scatterLineMarkerWidth
+        }
+      },
+      font: {
+        family: scatterFontFamily,
+        color: scatterFontColor
+      },
+      hoverlabel: {
+        bgcolor: scatterHoverBgColor,
+        font: {
+          family: scatterFontFamily,
+          color: scatterFontColor
+        }
       }
     };
     var data = [trace];
@@ -31,7 +60,26 @@ function genderChart() {
       x: response.map(data => data.Gender),
       y: response.map(data => data.AudienceCount),
       line: {
-        color: "#17BECF"
+        color: scatterLineColor,
+        width: scatterLineMarkerWidth
+      },
+      marker: {
+        symbol: scatterMarkerType,
+        size: scatterMarkerSize,
+        line: {
+          width: scatterLineMarkerWidth
+        }
+      },
+      font: {
+        family: scatterFontFamily,
+        color: scatterFontColor
+      },
+      hoverlabel: {
+        bgcolor: scatterHoverBgColor,
+        font: {
+          family: scatterFontFamily,
+          color: scatterFontColor
+        }
       }
     };
     var data = [trace];

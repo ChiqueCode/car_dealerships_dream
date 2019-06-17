@@ -1,4 +1,4 @@
-// All the data
+// Data route
 const url = "/data";
 
 // Grab only the data from our client
@@ -9,7 +9,7 @@ const url = "/data";
 const tbody = d3.select("tbody");
 
 // Filter table button
-const filterButton = d3.select(".button");
+const filterButton = d3.select("#filter-data");
 
 // Data for client
 const client_state = "/data/nj";

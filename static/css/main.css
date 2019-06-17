@@ -1,13 +1,45 @@
 /* Foundation Docs @ https://foundation.zurb.com/sites/docs/ */
 
-body { 
+/* Color Theme Swatches in Hex */
+dealership-loads-1 { color: #393E40; }
+dealership-loads-2 { color: #687273; }
+dealership-loads-3 { color: #5A8C7A; }
+dealership-loads-4 { color: #F2F2F2; }
+dealership-loads-5 { color: #0D0D0D; }
+
+body {
+  color: #0D0D0D;
   background-color: white;
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+.top-bar, .top-bar ul {
+  background-color: #F2F2F2;
 }
 
 h1 {
   line-height: 1;
 }
 
+/* For all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+/* Overriding plotly's default fonts */
+text,
+.js-plotly-plot .plotly,
+.js-plotly-plot .plotly div {
+  font-family: "Noto Sans SC", sans-serif !important;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
 
 #ageChart,
 #genderChart {
@@ -27,16 +59,21 @@ h1 {
 /* Responsive Breakpoints aka Media Queries */
 
 /* Small only */
-@media screen and (max-width: 39.9375em) {}
+@media screen and (max-width: 39.9375em) {
+}
 
 /* Medium and up */
-@media screen and (min-width: 40em) {}
+@media screen and (min-width: 40em) {
+}
 
 /* Medium only */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+}
 
 /* Large and up */
-@media screen and (min-width: 64em) {}
+@media screen and (min-width: 64em) {
+}
 
 /* Large only */
-@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}

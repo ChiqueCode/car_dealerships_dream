@@ -24,7 +24,7 @@ Base.prepare(db.engine, reflect=True)
 # Creating an easier reference
 Leads_table = Base.classes.leads_table
 
-# Routes 
+# Routes
 
 # Home page
 @app.route("/")
@@ -159,7 +159,21 @@ def CreditScore_data():
     data = {
         "x": df2["CreditScore"].values.tolist(),
         "y": df2["AudienceCount"].values.tolist(),
-        "type": "bar"
+        "type": "bar",
+        "textfont": {
+            "family": "\"Noto Sans SC\", sans-serif",
+            "color": "#F2F2F2"
+        },
+        "hoverlabel": {
+            "bgcolor": "#393E40",
+            "font": {
+                "family": "\"Noto Sans SC\", sans-serif",
+                "color": "#F2F2F2"
+            }
+        },
+        "marker": {
+            "color": "#5A8C7A"
+        }
     }
     return jsonify(data)
 
@@ -176,7 +190,21 @@ def Household_Income_data():
     data = {
         "x": df3["Household_Income"].values.tolist(),
         "y": df3["AudienceCount"].values.tolist(),
-        "type": "bar"
+        "type": "bar",
+        "textfont": {
+            "family": "\"Noto Sans SC\", sans-serif",
+            "color": "#F2F2F2"
+        },
+        "hoverlabel": {
+            "bgcolor": "#393E40",
+            "font": {
+                "family": "\"Noto Sans SC\", sans-serif",
+                "color": "#F2F2F2"
+            }
+        },
+        "marker": {
+            "color": "#5A8C7A"
+        }
     }
     return jsonify(data)
 
