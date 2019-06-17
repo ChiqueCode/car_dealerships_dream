@@ -17,13 +17,13 @@
      <!--First Column in this Row-->
        <div class="col-md-6">
         <div class="box">    
-          <div id="plot"></div> 
+          <div id="ageChart"></div> 
         </div>   
        </div>
     <!--Second Column in this Row-->
         <div class="col-md-6">
         <div class="box"> 
-           <div id="plot1"></div>
+           <div id="genderChart"></div>
         </div>
         </div>
     </div>
@@ -35,18 +35,18 @@
     <!--First Column in this Row-->
         <div class="col-md-6">
         <div class="box">    
-           <div id="bar1"></div>  
+           <div id="creditScoreChart"></div>  
         </div>
         </div>
     <!--Second Column in this Row-->
         <div class="col-md-6">
         <div class="box">    
-            <div id="bar2"></div>
+            <div id="householdIncomeChart"></div>
         </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="{{ url_for('static', filename='js/Chartapp.js') }}"></script>    
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>    
 </body>
 </html>
