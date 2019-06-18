@@ -13,7 +13,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(myMap);
 
 // An array containing each city's name, location, and population
-var cities = [{
+var states = [{
   location: [40.7128, -74.0059],
   name: "New York",
   population: "8,550,405"
@@ -72,10 +72,15 @@ var cities = [{
 
 ];
 
-// Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
-for (var i = 0; i < cities.length; i++) {
-  var city = cities[i];
-  L.marker(city.location)
-    .bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Audience Count " + city.population + "</h3>")
+// Loop through states and create one marker for each state, bind a popup containing its name and population add it to the map
+for (var i = 0; i < states.length; i++) {
+  var state = states[i];
+  L.marker(state.location)
+    .bindPopup("<h1>" + state.name + "</h1> <hr> <h3>Audience Count " + state.population + "</h3>")
     .addTo(myMap);
 }
+
+
+
+
+
