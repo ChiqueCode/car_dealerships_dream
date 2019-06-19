@@ -71,13 +71,11 @@ How to Purchase
 Fill out the Form and find your next customers instantly 
 
 Fields on the form:
-1. Name
-2. Last Name
-3. Dealership Name
-4. Address
-5. Pay with PayPal 
+1. Name of the Dealership
+2. Address
+5. Phone 
 
-Hit Submit => Thank you, you payment has been processed, take a look at your opportunities:
+Hit Pay with PayPal => Thank you, you payment has been processed, take a look at your opportunities:
 
 Table of the customers name, address, and so on
 
