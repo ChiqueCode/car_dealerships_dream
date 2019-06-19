@@ -6,16 +6,6 @@ Created by:
 - Sajani Menon
 - Amit Raut
 
-# A-Car-Dealers-Dream
-Find your next Customer 
-
-Group Project Created by:
-
-Amit Raut
-Kseniya Bogoslavskaya
-Monika Raj
-Sajani Menon
-
 BACKGROUND
 
 We are nationwide cable company with a extensive database of customer data. Our database is highly confidential and maintains all ethical norms. 
