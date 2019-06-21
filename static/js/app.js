@@ -50,7 +50,7 @@ d3.json(client_state).then(function(data, error) {
     let inputKids = d3.select("#kids");
 
     // Get the value property from the inputs and change it to lowercase to match the dataset
-    let inputZipValue = (inputZip.property("value"));
+    let inputZipValue = inputZip.property("value");
     let inputGenderValue = inputGender.property("value");
     let inputAgeValue = Number(inputAge.property("value"));
     let inputStatusValue = inputStatus.property("value");
