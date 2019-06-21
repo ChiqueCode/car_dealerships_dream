@@ -110,7 +110,7 @@ footer {
   padding-bottom: 50px;
 }
 
-footer ul {
+footer ul .no-bullet {
   list-style-type: none;
 }
 
