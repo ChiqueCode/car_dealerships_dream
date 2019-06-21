@@ -15,7 +15,7 @@ function ageChart() {
   d3.json(ageURL).then(function(response) {
     var trace = {
       type: "scatter",
-      name: "Audience Count by Age",
+      name: "Potential Clients by Age",
       x: response.map(data => data.AgeBin),
       y: response.map(data => data.AudienceCount),
       line: {
@@ -43,7 +43,7 @@ function ageChart() {
     };
     var data = [trace];
     var layout = {
-      title: "Audience Count by Age"
+      title: "Potential Clients by Age"
     };
     Plotly.newPlot("ageChart", data, layout);
   });
@@ -55,7 +55,7 @@ function genderChart() {
   d3.json(genderURL).then(function(response) {
     var trace = {
       type: "scatter",
-      name: "Audience Count by Gender",
+      name: "Potential Clients by Gender",
       x: response.map(data => data.Gender),
       y: response.map(data => data.AudienceCount),
       line: {
@@ -83,7 +83,7 @@ function genderChart() {
     };
     var data = [trace];
     var layout = {
-      title: "Audience Count by Gender"
+      title: "Potential Clients by Gender"
     };
     Plotly.newPlot("genderChart", data, layout);
   });
@@ -95,7 +95,7 @@ function creditScoreChart() {
   d3.json(creditScoreURL).then(function(data) {
     var data = [data];
     var layout = {
-      title: "Audience Count by Credit Score"
+      title: "Potential Clients by Credit Score"
     };
     Plotly.plot("creditScoreChart", data, layout);
   });
@@ -107,7 +107,7 @@ function houseHoldChart() {
   d3.json(houseHoldURL).then(function(data) {
     var data = [data];
     var layout = {
-      title: "Audience Count by Household Income"
+      title: "Potenial Clients by Household Income"
     };
     Plotly.plot("householdIncomeChart", data, layout);
   });

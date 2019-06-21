@@ -52,7 +52,7 @@ Demographic Insights
 Financial Insights
 
 3. Financial Stability analysis of the credit scores of the possible customers
-4. Audience Count by Household incomes
+4. Potential clients by Household incomes
 
 Building Form for purchase:
 
