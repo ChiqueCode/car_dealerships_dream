@@ -2,15 +2,6 @@
 
 Created by:
 - [Kseniya Bogoslavskaya](https://chique.dev/)
-- Monika Raj
-- Sajani Menon
-- Amit Raut
-
-BACKGROUND
-
-We are nationwide cable company with a extensive database of customer data. Our database is highly confidential and maintains all ethical norms. 
-We the Business Intelligence team at CoolCable were approached for a 2020 project idea with a goal to increase revenue. 
-What you will see is a POC that was put together to request funding.
 
 About US
 Data is knowledge. Using the data and insights we have about our data, we have created an interactive dashboard for Car dealers. 
@@ -20,10 +11,6 @@ This website will be a one stop shop for car dealers to find their next customer
 Source 
 
 The database is based on real authentic data and contains information of only those customers who are willing to share their credentials and the same has been built over regular surveys conducted by the CoolCable marketing research team.    
-
-Inspiration
-
-![End Goal](https://github.com/sajanimenon/A-Car-Dealer-s-Dream/blob/master/static/images/image001.png)
 
 Sources
 
