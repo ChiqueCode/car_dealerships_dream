@@ -13,7 +13,7 @@ from sqlalchemy.sql import func
 app = Flask(__name__)
 
 # Database Setup
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/leads.sqlite"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/clean_leads.sqlite"
 db = SQLAlchemy(app)
 
 # Reflect an existing database into a new model
@@ -130,9 +130,12 @@ def AgeBin_data():
     """Return Age Bin and Audience Count"""
     # Query for Audience Count by Age
     sel = [Leads_table.AGEBIN, func.count(Leads_table.ConsumerID)]
+
     results = db.session.query(*sel).\
         group_by(Leads_table.AGEBIN).all()
+
     df = pd.DataFrame(results, columns=['AgeBin', 'AudienceCount'])
+
     return jsonify(df.to_dict(orient="records"))
 
 
@@ -141,9 +144,12 @@ def Gender_data():
     """Return Gender and Audience Count"""
     # Query for Audience Count by Gender
     sel = [Leads_table.Gender, func.count(Leads_table.ConsumerID)]
+
     results = db.session.query(*sel).\
         group_by(Leads_table.Gender).all()
+
     df1 = pd.DataFrame(results, columns=['Gender', 'AudienceCount'])
+    
     return jsonify(df1.to_dict(orient="records"))
 
 
@@ -152,9 +158,12 @@ def CreditScore_data():
     """Return Credit Score and Audience Count"""
    # Query for Audience Count by Credit Score
     sel = [Leads_table.CreditScore, func.count(Leads_table.ConsumerID)]
+
     results = db.session.query(*sel).\
         group_by(Leads_table.CreditScore).all()
+
     df2 = pd.DataFrame(results, columns=['CreditScore', 'AudienceCount'])
+
     # Format the data for Plotly
     data = {
         "x": df2["CreditScore"].values.tolist(),
@@ -183,9 +192,12 @@ def Household_Income_data():
     """Return Household_Income and Audience Count"""
     # Query for Audience Count by Credit Score
     sel = [Leads_table.Household_Income, func.count(Leads_table.ConsumerID)]
+
     results = db.session.query(*sel).\
         group_by(Leads_table.Household_Income).all()
+
     df3 = pd.DataFrame(results, columns=['Household_Income', 'AudienceCount'])
+
     # Format the data for Plotly
     data = {
         "x": df3["Household_Income"].values.tolist(),
